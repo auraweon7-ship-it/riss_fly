@@ -1,3 +1,7 @@
+cd C:\Users\park9\riss
+
+# tsconfig.json 수정
+@"
 {
   "compilerOptions": {
     "target": "ES2022",
@@ -11,14 +15,14 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "declaration": false,
-    "sourceMap": false,
-    "removeComments": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitReturns": false,
     "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
+"@ | Out-File -FilePath tsconfig.json -Encoding UTF8
+
+# Git 커밋
+git add tsconfig.json
+git commit -m "Fix: Disable strict mode for Fly.io deployment"
+git push origin main
