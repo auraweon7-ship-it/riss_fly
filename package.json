@@ -1,0 +1,58 @@
+{
+  "name": "riss-mcp-server",
+  "version": "1.0.0",
+  "description": "RISS 학술정보 검색을 위한 Claude MCP 커넥터 서버",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "riss-mcp-server": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "dev": "tsx src/server.ts",
+    "watch": "tsx watch src/server.ts",
+    "clean": "rm -rf dist",
+    "railway:build": "npm install && npm run build",
+    "railway:start": "npm start"
+  },
+  "keywords": [
+    "mcp",
+    "riss",
+    "academic",
+    "research",
+    "korea",
+    "thesis",
+    "article",
+    "claude",
+    "ai"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/riss-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/riss-mcp-server/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/riss-mcp-server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "axios": "^1.7.0",
+    "express": "^4.19.0",
+    "xml2js": "^0.6.2",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.0",
+    "@types/xml2js": "^0.4.14",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

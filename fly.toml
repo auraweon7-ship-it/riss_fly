@@ -1,0 +1,38 @@
+# fly.toml app configuration file
+# Fly.io 배포 설정: https://fly.io/docs/reference/configuration/
+
+app = "riss-mcp-server"
+primary_region = "nrt"  # 도쿄 리전 (한국과 가장 가까움)
+
+[build]
+  # Node.js 빌드팩 사용
+  [build.args]
+    NODE_VERSION = "20"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  # 헬스체크 설정
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    timeout = "5s"
+    path = "/health"
+
+[deploy]
+  strategy = "rolling"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256

@@ -1,0 +1,32 @@
+{
+  "name": "RISS MCP Server",
+  "description": "RISS 학술정보 검색을 위한 Claude MCP 커넥터 서버",
+  "repository": "https://github.com/YOUR_USERNAME/riss-mcp-server",
+  "logo": "https://www.riss.kr/resources/images/common/logo.png",
+  "keywords": [
+    "mcp",
+    "claude",
+    "riss",
+    "academic",
+    "research",
+    "korea"
+  ],
+  "services": [
+    {
+      "name": "riss-mcp-server",
+      "icon": "🎓",
+      "plan": "hobby",
+      "healthcheckPath": "/health",
+      "env": {
+        "NODE_ENV": {
+          "description": "Node environment",
+          "value": "production"
+        },
+        "PORT": {
+          "description": "Port number",
+          "value": "8080"
+        }
+      }
+    }
+  ]
+}
