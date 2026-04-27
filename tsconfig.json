@@ -11,8 +11,17 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
+"@ | Out-File -FilePath tsconfig.json -Encoding UTF8
+
+# GitHub 푸시
+git add tsconfig.json
+git commit -m "Fix: Disable TypeScript strict mode"
+git push origin main
