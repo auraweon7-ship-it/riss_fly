@@ -1,5 +1,10 @@
+# fly.toml app configuration file generated for riss-fly on 2026-04-27T06:45:06Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
 app = 'riss-fly'
-primary_region = 'ams'
+primary_region = 'sin'
 
 [build]
 
@@ -19,7 +24,7 @@ primary_region = 'ams'
   processes = ['app']
 
   [[http_service.checks]]
-    interval = '60s'
+    interval = '1m0s'
     timeout = '10s'
     grace_period = '30s'
     method = 'GET'
